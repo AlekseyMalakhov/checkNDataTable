@@ -1,9 +1,9 @@
 <template>
-    <n-data-table :columns="columns" :data="data" :scroll-x="700" :class="$style.myDataTable" />
+    <n-data-table :columns="columns" :data="data" :scroll-x="700" :class="$style.myDataTable" :max-height="500" />
 </template>
 
 <script>
-import { ref } from "vue";
+import { h } from "vue";
 
 export default {
     name: "App",
@@ -38,6 +38,34 @@ export default {
                 address: "London No. 2 Lake Park",
                 phone: "+44444444",
             },
+            {
+                key: 5,
+                name: "John Brown",
+                age: 32,
+                address: "New York No. 1 Lake Park",
+                phone: "+11111111",
+            },
+            {
+                key: 6,
+                name: "Jim Green",
+                age: 42,
+                address: "London No. 1 Lake Park",
+                phone: "+22222222",
+            },
+            {
+                key: 7,
+                name: "Joe Black",
+                age: 32,
+                address: "Sidney No. 1 Lake Park",
+                phone: "+33333333",
+            },
+            {
+                key: 8,
+                name: "Jim Red",
+                age: 32,
+                address: "London No. 2 Lake Park",
+                phone: "+44444444",
+            },
         ];
 
         const columns = [
@@ -45,16 +73,31 @@ export default {
                 title: "Name",
                 key: "name",
                 className: "myColumn",
+                defaultSortOrder: "ascend",
+                sorter: "default",
+                render: (row) => {
+                    return h(() => row.name + " 123");
+                },
             },
             {
                 title: "Age",
                 key: "age",
                 className: "myColumn",
+                defaultSortOrder: "ascend",
+                sorter: "default",
+                render: (row) => {
+                    return h(() => row.age + " 123");
+                },
             },
             {
                 title: "Address",
                 key: "address",
                 className: "myColumn",
+                defaultSortOrder: "ascend",
+                sorter: "default",
+                render: (row) => {
+                    return h(() => row.address + " 123");
+                },
             },
             {
                 title: "Phone",
