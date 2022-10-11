@@ -1,10 +1,8 @@
 <template>
-    <n-data-table :columns="columns" :data="data" :scroll-x="700" :class="$style.myDataTable" :max-height="500" />
+    <n-data-table :columns="columns" :data="data" :scroll-x="700" :max-height="300" />
 </template>
 
 <script>
-import { h } from "vue";
-
 export default {
     name: "App",
     components: {},
@@ -72,37 +70,24 @@ export default {
             {
                 title: "Name",
                 key: "name",
-                className: "myColumn",
                 defaultSortOrder: "ascend",
                 sorter: "default",
-                render: (row) => {
-                    return h(() => row.name + " 123");
-                },
             },
             {
                 title: "Age",
                 key: "age",
-                className: "myColumn",
                 defaultSortOrder: "ascend",
                 sorter: "default",
-                render: (row) => {
-                    return h(() => row.age + " 123");
-                },
             },
             {
                 title: "Address",
                 key: "address",
-                className: "myColumn",
                 defaultSortOrder: "ascend",
                 sorter: "default",
-                render: (row) => {
-                    return h(() => row.address + " 123");
-                },
             },
             {
                 title: "Phone",
                 key: "phone",
-                className: "myColumn",
             },
         ];
 
@@ -114,25 +99,4 @@ export default {
 };
 </script>
 
-<style module>
-.myDataTable:global.n-data-table .n-data-table-td {
-    font-weight: 500;
-    font-size: 16px;
-    color: #92929d;
-    padding-left: 30px;
-    word-break: normal;
-}
-.myDataTable:global.n-data-table .n-data-table-th {
-    font-weight: 600;
-    font-size: 16px;
-    color: #11142d;
-    padding-left: 30px;
-    word-break: normal;
-}
-.myDataTable:global.n-data-table .n-data-table-td.myColumn {
-    width: 150px;
-}
-.myDataTable:global.n-data-table .n-data-table-th.myColumn {
-    width: 150px;
-}
-</style>
+<style module></style>
