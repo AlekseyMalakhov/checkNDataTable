@@ -1,5 +1,5 @@
 <template>
-    <n-data-table :columns="columns" :data="data" :scroll-x="700" />
+    <n-data-table :columns="columns" :data="data" :scroll-x="700" :class="$style.myDataTable" />
 </template>
 
 <script>
@@ -44,18 +44,22 @@ export default {
             {
                 title: "Name",
                 key: "name",
+                className: "myColumn",
             },
             {
                 title: "Age",
                 key: "age",
+                className: "myColumn",
             },
             {
                 title: "Address",
                 key: "address",
+                className: "myColumn",
             },
             {
                 title: "Phone",
                 key: "phone",
+                className: "myColumn",
             },
         ];
 
@@ -67,4 +71,25 @@ export default {
 };
 </script>
 
-<style module></style>
+<style module>
+.myDataTable:global.n-data-table .n-data-table-td {
+    font-weight: 500;
+    font-size: 16px;
+    color: #92929d;
+    padding-left: 30px;
+    word-break: normal;
+}
+.myDataTable:global.n-data-table .n-data-table-th {
+    font-weight: 600;
+    font-size: 16px;
+    color: #11142d;
+    padding-left: 30px;
+    word-break: normal;
+}
+.myDataTable:global.n-data-table .n-data-table-td.myColumn {
+    width: 150px;
+}
+.myDataTable:global.n-data-table .n-data-table-th.myColumn {
+    width: 150px;
+}
+</style>
