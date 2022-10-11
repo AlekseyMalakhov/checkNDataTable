@@ -70,20 +70,14 @@ export default {
             {
                 title: "Name",
                 key: "name",
-                defaultSortOrder: "ascend",
-                sorter: "default",
             },
             {
                 title: "Age",
                 key: "age",
-                defaultSortOrder: "ascend",
-                sorter: "default",
             },
             {
                 title: "Address",
                 key: "address",
-                defaultSortOrder: "ascend",
-                sorter: "default",
             },
             {
                 title: "Phone",
